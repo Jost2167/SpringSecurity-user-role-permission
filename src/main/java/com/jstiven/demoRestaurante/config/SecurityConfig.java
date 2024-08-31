@@ -30,6 +30,9 @@ public class SecurityConfig {
                   // Configuracion de los endpoints publicos
                   http.requestMatchers(HttpMethod.GET, "/login").permitAll();
 
+                  http.requestMatchers(HttpMethod.GET, "/css/**", "/js/**", "/images/**").permitAll();
+
+
                   // Configuracion de los endpoints privados
                   http.requestMatchers(HttpMethod.GET,"/home/**").authenticated();
 
